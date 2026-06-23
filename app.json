@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "Molfi",
+    "slug": "molfi-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/logo/logo.png",
+    "scheme": "molfi",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.molfi.app"
+    },
+    "android": {
+      "package": "com.molfi.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#1a1a1a"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ],
+      "expo-web-browser",
+      "expo-font",
+      "expo-image",
+      "expo-secure-store"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "605be977-fd44-41c9-9a54-be23d3f0fa28"
+      }
+    }
+  }
+}
