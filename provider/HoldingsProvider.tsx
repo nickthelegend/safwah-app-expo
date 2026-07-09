@@ -1,13 +1,13 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
-import { getRates } from '../lib/api';
+import { getRates, getProfile } from '../lib/api';
 import { DEFAULT_RATES, type Currency, type Rates } from '../lib/format';
 
 export type Token = 'AED' | 'USDT' | 'SFL';
 export type Balances = Record<Token, number>;
 
 export const TOKEN_META: Record<Token, { name: string; color: string }> = {
-  AED: { name: 'Dirham (Mock AED)', color: '#15300C' },
+  AED: { name: 'UAE Dirham', color: '#15300C' },
   USDT: { name: 'Tether USD', color: '#26a17b' },
   SFL: { name: 'Safwah Loyalty', color: '#10b981' },
 };
@@ -38,13 +38,20 @@ type Ctx = {
 const HoldingsContext = createContext<Ctx>(null as unknown as Ctx);
 
 export function HoldingsProvider({ children }: { children: React.ReactNode }) {
-  const [balances, setBalances] = useState<Balances>({ AED: 900, USDT: 1000, SFL: 1284 });
+  const [balances, setBalances] = useState<Balances>({ AED: 0, USDT: 0, SFL: 0 });
   const [currency, setCurrency] = useState<Currency>('AED');
   const [notifications, setNotifications] = useState(true);
   const [rates, setRates] = useState<Rates>(DEFAULT_RATES);
 
   useEffect(() => {
     getRates().then(setRates).catch(() => {});
+    // Seed holdings from the backend profile (real data) instead of hardcoding them.
+    getProfile('')
+      .then((p) => {
+        if (!p) return;
+        setBalances({ AED: p.balances?.AED ?? 0, USDT: p.balances?.USDT ?? 0, SFL: p.sfl ?? 0 });
+      })
+      .catch(() => {});
   }, []);
 
   const value = useMemo<Ctx>(() => {

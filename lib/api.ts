@@ -23,6 +23,7 @@ export type Profile = {
   sfl: number;
   sflToNext: number;
   memberSince: string;
+  balances?: { AED: number; USDT: number };
 };
 
 async function get<T>(path: string, fallback: T): Promise<T> {
