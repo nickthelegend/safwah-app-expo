@@ -262,7 +262,7 @@ const styles = StyleSheet.create({
   levelSfl: { fontFamily: safwah.font.monoBold, fontSize: 20, color: safwah.colors.emerald, marginTop: 4 },
   levelRing: { width: 48, height: 48, borderRadius: 24, borderWidth: 3, borderColor: safwah.colors.emerald, alignItems: 'center', justifyContent: 'center' },
   levelPct: { fontFamily: safwah.font.monoBold, fontSize: 13, color: safwah.colors.text },
-  levelTrack: { height: 7, borderRadius: 4, backgroundColor: '#eeeef0', borderWidth: 1, borderColor: safwah.colors.border, overflow: 'hidden' },
+  levelTrack: { height: 7, borderRadius: 4, backgroundColor: '#E7F0DB', borderWidth: 1, borderColor: safwah.colors.border, overflow: 'hidden' },
   levelFill: { height: '100%', backgroundColor: safwah.colors.emerald },
   levelHint: { fontFamily: safwah.font.regular, fontSize: 12, color: safwah.colors.textMute, marginTop: 9 },
 

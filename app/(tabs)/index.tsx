@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
   hero: { marginTop: 12, paddingVertical: 20 },
   heroTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   heroLabel: { fontFamily: safwah.font.medium, fontSize: 13, color: safwah.colors.textDim },
-  segment: { flexDirection: 'row', backgroundColor: '#eeeef0', borderRadius: safwah.radius.pill, padding: 3, borderWidth: 1, borderColor: safwah.colors.border },
+  segment: { flexDirection: 'row', backgroundColor: '#E7F0DB', borderRadius: safwah.radius.pill, padding: 3, borderWidth: 1, borderColor: safwah.colors.border },
   segBtn: { paddingVertical: 4, paddingHorizontal: 11, borderRadius: safwah.radius.pill },
   segBtnActive: { backgroundColor: safwah.colors.lime },
   segText: { fontFamily: safwah.font.semibold, fontSize: 11, color: safwah.colors.textMute },

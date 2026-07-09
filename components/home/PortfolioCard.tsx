@@ -50,7 +50,7 @@ export function PortfolioCard() {
       style={[
         styles.card, 
         { 
-          backgroundColor: '#1d1d1d', // card color
+          backgroundColor: '#0A0E0B', // card color
           opacity: fadeAnim,
           transform: [{ translateY: slideAnim }]
         }
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
   agentLabel: {
     fontFamily: 'Inter-Regular',
     fontSize: 12,
-    color: '#A0A0A0',
+    color: '#7B9169',
   },
   editText: {
     fontFamily: 'Inter-Regular',
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
   actionLabel: {
     fontFamily: 'Inter-Regular',
     fontSize: 12,
-    color: '#A0A0A0',
+    color: '#7B9169',
   },
 });
 

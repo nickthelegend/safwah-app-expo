@@ -37,8 +37,8 @@ export function TokenChart() {
         noOfSections={4}
         yAxisColor="transparent"
         xAxisColor="transparent"
-        yAxisTextStyle={{ color: '#6C6C6C', fontSize: 10 }}
-        xAxisLabelTextStyle={{ color: '#6C6C6C', fontSize: 10 }}
+        yAxisTextStyle={{ color: '#46603A', fontSize: 10 }}
+        xAxisLabelTextStyle={{ color: '#46603A', fontSize: 10 }}
         hideDataPoints
         curved
         areaChart

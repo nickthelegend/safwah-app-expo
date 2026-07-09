@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.7)',
   },
   sheet: {
-    backgroundColor: '#161616',
+    backgroundColor: '#0A0E0B',
     borderTopLeftRadius: 32,
     borderTopRightRadius: 32,
     minHeight: height * 0.4,

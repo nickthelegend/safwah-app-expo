@@ -55,7 +55,7 @@ export function ModernLineChart({ data, height = 240, color, hideYAxis = false }
         hideDataPoints={false}
         dataPointsColor={primaryColor}
         dataPointsRadius={4}
-        focusedDataPointColor="#131316"
+        focusedDataPointColor="#15300C"
         focusedDataPointRadius={6}
         showVerticalLines={false}
         pointerConfig={{
@@ -83,7 +83,7 @@ export function ModernLineChart({ data, height = 240, color, hideYAxis = false }
                 <Text style={{ color: 'rgba(19,19,22,0.6)', fontSize: 10, fontFamily: 'Inter-Medium', marginBottom: 2 }}>
                   {items[0].label || 'Value'}
                 </Text>
-                <Text style={{ color: '#131316', fontSize: 16, fontFamily: 'Manrope-ExtraBold' }}>
+                <Text style={{ color: '#15300C', fontSize: 16, fontFamily: 'Manrope-ExtraBold' }}>
                   {items[0].value.toLocaleString()}
                 </Text>
               </View>

@@ -6,7 +6,7 @@ import { safwah } from '../../theme/safwah';
 
 export type DoughnutDatum = { label: string; value: number; color?: string };
 
-const PALETTE = ['#131316', '#10b981', '#38bdf8', '#f59e0b', '#a78bfa', '#fb7185'];
+const PALETTE = ['#15300C', '#10b981', '#38bdf8', '#f59e0b', '#a78bfa', '#fb7185'];
 
 type Config = { height?: number; innerRadius?: number; centerLabel?: string; centerValue?: string };
 

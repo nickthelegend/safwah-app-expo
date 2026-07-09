@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
   description: {
     fontFamily: 'Inter-Regular',
     fontSize: 15,
-    color: '#63636b',
+    color: '#46603A',
     lineHeight: 22,
     marginBottom: 32,
   },
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
   cancelText: {
     fontFamily: 'Manrope-SemiBold',
     fontSize: 15,
-    color: '#9a9aa2',
+    color: '#7B9169',
   },
   confirmButton: {
     minWidth: 120,

@@ -42,7 +42,7 @@ export function TimelineItem({ item, index }: TimelineItemProps) {
         style={[
           styles.container, 
           { 
-            backgroundColor: '#1d1d1d', 
+            backgroundColor: '#0A0E0B', 
             opacity: fadeAnim 
           }
         ]}
@@ -68,7 +68,7 @@ export function TimelineItem({ item, index }: TimelineItemProps) {
           ]}>
             <Text style={[
               styles.statusText, 
-              { color: item.status === 'Transfer' ? '#2196F3' : '#A0A0A0' }
+              { color: item.status === 'Transfer' ? '#2196F3' : '#7B9169' }
             ]}>
               {item.status}
             </Text>
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
   time: {
     fontFamily: 'Inter-Regular',
     fontSize: 12,
-    color: '#6C6C6C',
+    color: '#46603A',
     marginTop: 2,
   },
   right: {

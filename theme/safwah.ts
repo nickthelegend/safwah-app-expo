@@ -1,24 +1,26 @@
-// Safwah design system — premium white/black (Mobbin register): light-gray canvas,
-// white cards, ink as the primary accent, green reserved for success only.
+// Safwah design system — Talise register (talise.io look): light green→cream canvas,
+// white cards, dark-green ink as the primary accent, lime as the signature highlight.
+// See ../../safwah-landing-page/DESIGN.md
 export const safwah = {
   colors: {
-    bg: '#f6f6f7',
-    bgElevated: '#ffffff',
+    bg: '#F4FAEC',            // light green paper canvas
+    bgElevated: '#FBF3EA',    // warm cream
     card: '#ffffff',
-    cardSoft: '#eeeef0',
-    lime: '#131316',          // primary accent → ink (dark pills / active)
-    limeDim: '#33333a',
-    emerald: '#17a34a',       // success / positive only
-    text: '#131316',
-    textDim: '#63636b',
-    textMute: '#9a9aa2',
-    border: 'rgba(19,19,22,0.08)',
-    borderStrong: 'rgba(19,19,22,0.14)',
-    hairline: 'rgba(19,19,22,0.06)',
-    limeWash: 'rgba(19,19,22,0.05)',
-    emeraldWash: 'rgba(23,163,74,0.10)',
+    cardSoft: '#EFF6E6',
+    lime: '#15300C',          // primary accent → ink (dark pills / active)
+    limeDim: '#2F4A24',
+    limeBright: '#CAFFB8',    // signature lime highlight
+    emerald: '#1F9D46',       // success / positive
+    text: '#15300C',          // dark-green ink
+    textDim: '#46603A',
+    textMute: '#7B9169',
+    border: 'rgba(21,48,12,0.10)',
+    borderStrong: 'rgba(21,48,12,0.16)',
+    hairline: 'rgba(21,48,12,0.06)',
+    limeWash: 'rgba(202,255,184,0.45)',
+    emeraldWash: 'rgba(31,157,70,0.10)',
     danger: '#e5484d',
-    onLime: '#ffffff',        // text/icon on ink pills
+    onLime: '#F7FCF2',        // cream text/icon on ink pills
   },
   font: {
     display: 'SpaceGrotesk_700Bold',

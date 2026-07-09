@@ -103,7 +103,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
                 )}
               </View>
               <View style={styles.textContainer}>
-                <Text style={[styles.title, { color: '#131316' }]}>{t.title}</Text>
+                <Text style={[styles.title, { color: '#15300C' }]}>{t.title}</Text>
                 {t.description && (
                   <Text style={styles.description}>{t.description}</Text>
                 )}
@@ -112,7 +112,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
                 onPress={() => setToasts(prev => prev.filter(toast => toast.id !== t.id))}
                 style={styles.closeButton}
               >
-                <Ionicons name="close" size={20} color="#9a9aa2" />
+                <Ionicons name="close" size={20} color="#7B9169" />
               </TouchableOpacity>
             </Animated.View>
           ))}
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
   description: {
     fontFamily: 'Inter-Regular',
     fontSize: 13,
-    color: '#63636b',
+    color: '#46603A',
     marginTop: 2,
   },
   closeButton: {

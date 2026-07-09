@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
   agentBadgeText: {
     fontFamily: 'Manrope-Bold',
     fontSize: 10,
-    color: '#b157fb',
+    color: '#15300C',
     textTransform: 'uppercase',
     letterSpacing: 0.5,
   },
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     borderRadius: 22,
     justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: '#b157fb',
+    shadowColor: '#15300C',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 8,

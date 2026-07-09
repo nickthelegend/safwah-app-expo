@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   label: {
     fontFamily: 'Inter-Regular',
     fontSize: 12,
-    color: '#6C6C6C',
+    color: '#46603A',
   },
   value: {
     fontFamily: 'DMMono_400Regular',

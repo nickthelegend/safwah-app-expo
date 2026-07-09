@@ -14,11 +14,11 @@ export function ScreenBackground({ children }: { children: React.ReactNode }) {
       <Svg width={width} height={h} style={StyleSheet.absoluteFill} pointerEvents="none">
         <Defs>
           <RadialGradient id="topglow" cx="50%" cy="-8%" r="55%">
-            <Stop offset="0" stopColor="#131316" stopOpacity="0.04" />
-            <Stop offset="1" stopColor="#131316" stopOpacity="0" />
+            <Stop offset="0" stopColor="#15300C" stopOpacity="0.04" />
+            <Stop offset="1" stopColor="#15300C" stopOpacity="0" />
           </RadialGradient>
         </Defs>
-        <Rect x="0" y="0" width={width} height={h} fill="#f6f6f7" />
+        <Rect x="0" y="0" width={width} height={h} fill="#F4FAEC" />
         <Rect x="0" y="0" width={width} height={h} fill="url(#topglow)" />
       </Svg>
       {children}

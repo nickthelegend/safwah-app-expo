@@ -49,7 +49,7 @@ export function TabSwitcher({ activeTab, onTabChange }: TabSwitcherProps) {
         >
           <Text style={[
             styles.tabText, 
-            { color: activeTab === 'Assets' ? '#fff' : '#A0A0A0' }
+            { color: activeTab === 'Assets' ? '#fff' : '#7B9169' }
           ]}>Assets</Text>
         </TouchableOpacity>
         <TouchableOpacity 
@@ -59,7 +59,7 @@ export function TabSwitcher({ activeTab, onTabChange }: TabSwitcherProps) {
         >
           <Text style={[
             styles.tabText, 
-            { color: activeTab === 'Timeline' ? '#fff' : '#A0A0A0' }
+            { color: activeTab === 'Timeline' ? '#fff' : '#7B9169' }
           ]}>Timeline</Text>
         </TouchableOpacity>
       </View>

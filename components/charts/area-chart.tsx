@@ -75,7 +75,7 @@ export function AreaChart({ data, config }: AreaChartProps) {
                 <Text style={{ color: 'rgba(19,19,22,0.6)', fontSize: 10, fontFamily: 'Inter-Regular', marginBottom: 4 }}>
                   {items[0].label}
                 </Text>
-                <Text style={{ color: '#131316', fontSize: 16, fontFamily: 'Inter-Medium', fontWeight: 'bold' }}>
+                <Text style={{ color: '#15300C', fontSize: 16, fontFamily: 'Inter-Medium', fontWeight: 'bold' }}>
                   ${items[0].value.toLocaleString()}
                 </Text>
               </View>

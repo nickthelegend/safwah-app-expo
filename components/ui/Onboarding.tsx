@@ -144,7 +144,7 @@ export function Onboarding({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1a1a1a', // background color
+    backgroundColor: '#0A0E0B', // background color
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Manrope-ExtraBold',
     fontSize: 32,
     marginBottom: 10,
-    color: '#b157fb', // primary color
+    color: '#15300C', // primary color
     textAlign: 'center',
   },
   description: {
@@ -199,11 +199,11 @@ const styles = StyleSheet.create({
   dot: {
     height: 10,
     borderRadius: 5,
-    backgroundColor: '#b157fb',
+    backgroundColor: '#15300C',
     marginHorizontal: 8,
   },
   button: {
-    backgroundColor: '#b157fb',
+    backgroundColor: '#15300C',
     padding: 18,
     borderRadius: 16,
     width: '90%',
@@ -217,7 +217,7 @@ const styles = StyleSheet.create({
   },
   skipButton: {
     fontFamily: 'Inter-Medium',
-    color: '#A0A0A0',
+    color: '#7B9169',
     fontSize: 16,
   },
 

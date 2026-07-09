@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
   title: { fontFamily: safwah.font.bold, fontSize: 19, color: safwah.colors.text },
   close: { position: 'absolute', right: 20, top: 14, width: 34, height: 34, borderRadius: 17, backgroundColor: safwah.colors.card, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: safwah.colors.border },
 
-  cameraWrap: { width: '100%', aspectRatio: 1, borderRadius: 26, overflow: 'hidden', backgroundColor: '#eeeef0', borderWidth: 1, borderColor: safwah.colors.border, alignItems: 'center', justifyContent: 'center', marginTop: 4 },
+  cameraWrap: { width: '100%', aspectRatio: 1, borderRadius: 26, overflow: 'hidden', backgroundColor: '#E7F0DB', borderWidth: 1, borderColor: safwah.colors.border, alignItems: 'center', justifyContent: 'center', marginTop: 4 },
   fallback: { ...StyleSheet.absoluteFillObject, alignItems: 'center', justifyContent: 'center' },
   corner: { position: 'absolute', width: 32, height: 32, borderColor: safwah.colors.lime },
   tl: { top: 16, left: 16, borderTopWidth: 3, borderLeftWidth: 3, borderTopLeftRadius: 12 },

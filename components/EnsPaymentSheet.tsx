@@ -28,7 +28,7 @@ function Row({ label, value, isGreen }: { label: string; value: string; isGreen?
   return (
     <View style={styles.row}>
       <Text style={styles.rowLabel}>{label}</Text>
-      <Text style={[styles.rowValue, isGreen && { color: '#131316' }]}>{value}</Text>
+      <Text style={[styles.rowValue, isGreen && { color: '#15300C' }]}>{value}</Text>
     </View>
   );
 }
@@ -155,8 +155,8 @@ const styles = StyleSheet.create({
   },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 20 },
   closeIcon: { padding: 4 },
-  sheetTitle: { fontFamily: 'Manrope-Bold', fontSize: 18, color: '#131316', marginBottom: 4 },
-  sheetDomain: { fontFamily: 'Manrope-ExtraBold', fontSize: 24, color: '#131316' },
+  sheetTitle: { fontFamily: 'Manrope-Bold', fontSize: 18, color: '#15300C', marginBottom: 4 },
+  sheetDomain: { fontFamily: 'Manrope-ExtraBold', fontSize: 24, color: '#15300C' },
   priceCard: {
     backgroundColor: 'rgba(19,19,22,0.04)', borderRadius: 16,
     borderWidth: 1, borderColor: 'rgba(19,19,22,0.05)',
@@ -164,12 +164,12 @@ const styles = StyleSheet.create({
   },
   row: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   rowLabel: { fontFamily: 'Inter-Regular', fontSize: 13, color: 'rgba(19,19,22,0.6)' },
-  rowValue: { fontFamily: 'Inter-Bold', fontSize: 14, color: '#131316' },
+  rowValue: { fontFamily: 'Inter-Bold', fontSize: 14, color: '#15300C' },
   infoBlock: { marginBottom: 32 },
   infoText: { fontFamily: 'Inter-Regular', fontSize: 13, color: 'rgba(19,19,22,0.6)', lineHeight: 20 },
-  addressText: { fontFamily: 'Inter-Medium', fontSize: 14, color: '#131316', marginTop: 8 },
+  addressText: { fontFamily: 'Inter-Medium', fontSize: 14, color: '#15300C', marginTop: 8 },
   confirmBtn: {
-    backgroundColor: '#131316', borderRadius: 28,
+    backgroundColor: '#15300C', borderRadius: 28,
     height: 56, justifyContent: 'center', alignItems: 'center', marginBottom: 12
   },
   confirmBtnText: { fontFamily: 'Manrope-ExtraBold', fontSize: 16, color: '#ffffff' },

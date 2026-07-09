@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: 'KHTekaMedium',
     fontSize: 16,
-    color: '#b157fb',
+    color: '#15300C',
   },
   liveBadge: {
     flexDirection: 'row',
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   },
   timestamp: {
     fontSize: 12,
-    color: '#A0A0A0',
+    color: '#7B9169',
   },
 });
 
