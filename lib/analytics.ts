@@ -28,7 +28,7 @@ const CAT_COLORS: Record<string, string> = {
   Groceries: '#10b981',
   Transport: '#a78bfa',
   Retail: '#fb7185',
-  Other: '#CCFF00',
+  Other: '#131316',
 };
 
 /// Spend grouped by merchant category.
@@ -39,6 +39,6 @@ export function categoryBreakdown(txs: Transaction[]): { label: string; value: n
     m[c] = (m[c] || 0) + (t.amountAED || 0);
   });
   return Object.entries(m)
-    .map(([label, value]) => ({ label, value: +value.toFixed(2), color: CAT_COLORS[label] || '#CCFF00' }))
+    .map(([label, value]) => ({ label, value: +value.toFixed(2), color: CAT_COLORS[label] || '#131316' }))
     .sort((a, b) => b.value - a.value);
 }

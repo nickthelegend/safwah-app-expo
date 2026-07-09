@@ -4,15 +4,27 @@ import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { CameraView, useCameraPermissions } from 'expo-camera';
+import { useAccount } from 'wagmi';
+import { useAppKit } from '@reown/appkit-react-native';
+import { parseUnits } from 'viem';
 
 import { safwah } from '../theme/safwah';
 import { API_BASE } from '../lib/api';
 import { fmt } from '../lib/format';
+import { useTx } from '../provider/TxProvider';
+import { CONTRACTS } from '../lib/contracts';
+import { useConsumerOnchain } from '../hooks/useConsumerOnchain';
+
+const isAddress = (v: string): v is `0x${string}` => /^0x[a-fA-F0-9]{40}$/.test(v.trim());
 
 export default function ScanScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const [permission, requestPermission] = useCameraPermissions();
+  const { isConnected } = useAccount();
+  const { open } = useAppKit();
+  const { run } = useTx();
+  const oc = useConsumerOnchain();
   const [merchant, setMerchant] = useState('');
   const [amount, setAmount] = useState('');
   const [token, setToken] = useState<'AED' | 'USDT'>('USDT');
@@ -20,6 +32,7 @@ export default function ScanScreen() {
 
   const cameraReady = Platform.OS !== 'web' && permission?.granted;
 
+  // QR encodes either a safwah URL (?merchant=0x…&amount=…) or a bare merchant address.
   const onBarcode = ({ data }: { data: string }) => {
     try {
       const url = new URL(data);
@@ -33,27 +46,57 @@ export default function ScanScreen() {
   };
 
   const pay = async () => {
+    if (!isConnected) {
+      open();
+      return;
+    }
     const aed = parseFloat(amount) || 0;
     if (aed <= 0) return;
+
+    // The on-chain payment settles in AED, so the merchant field must be a wallet address.
+    const to = merchant.trim();
+    if (!isAddress(to)) return;
+
     setStatus('paying');
     try {
-      await fetch(`${API_BASE}/transactions`, {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({
-          merchant: merchant || 'Safwah Merchant',
-          category: 'Payment',
-          amountAED: aed,
-          vatAED: +(aed * 0.05).toFixed(2),
-          token,
-          status: 'completed',
-        }),
-      });
+      const amountAED = parseUnits(amount, 18);
+
+      // Approve AED for the payment contract, then pay(merchant, amount, receipt).
+      await run(
+        { address: CONTRACTS.MockAED.address, abi: CONTRACTS.MockAED.abi, functionName: 'approve', args: [CONTRACTS.SafwahPayment.address, amountAED] },
+        { label: 'Approving AED' },
+      );
+      await run(
+        { address: CONTRACTS.SafwahPayment.address, abi: CONTRACTS.SafwahPayment.abi, functionName: 'pay', args: [to, amountAED, 'safwah-app'] },
+        { label: `Paying AED ${fmt(aed)}` },
+      );
+
+      oc.refetch();
+
+      // Mirror the payment to the backend ledger (best-effort; the on-chain tx is source of truth).
+      try {
+        await fetch(`${API_BASE}/transactions`, {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({
+            merchant: to,
+            category: 'Payment',
+            amountAED: aed,
+            vatAED: +(aed * 0.05).toFixed(2),
+            token,
+            status: 'completed',
+          }),
+        });
+      } catch {
+        // ignore — the on-chain payment already succeeded
+      }
+
+      setStatus('done');
+      setTimeout(() => router.back(), 1200);
     } catch {
-      // ignore — demo
+      // run() surfaced the error in its modal; return to idle so the user can retry.
+      setStatus('idle');
     }
-    setStatus('done');
-    setTimeout(() => router.back(), 1200);
   };
 
   return (
@@ -86,7 +129,7 @@ export default function ScanScreen() {
               />
             ) : (
               <View style={styles.fallback}>
-                <Ionicons name="qr-code-outline" size={76} color="rgba(204,255,0,0.22)" />
+                <Ionicons name="qr-code-outline" size={76} color="rgba(19,19,22,0.05)" />
               </View>
             )}
             <View style={[styles.corner, styles.tl]} />
@@ -145,6 +188,11 @@ export default function ScanScreen() {
           <TouchableOpacity style={styles.payBtn} onPress={pay} activeOpacity={0.9} disabled={status === 'paying'}>
             {status === 'paying' ? (
               <ActivityIndicator color={safwah.colors.onLime} />
+            ) : !isConnected ? (
+              <>
+                <Text style={styles.payText}>Connect wallet</Text>
+                <Ionicons name="arrow-forward" size={18} color={safwah.colors.onLime} />
+              </>
             ) : (
               <>
                 <Text style={styles.payText}>Pay{amount ? ` AED ${fmt(parseFloat(amount) || 0)}` : ''}</Text>
@@ -165,7 +213,7 @@ const styles = StyleSheet.create({
   title: { fontFamily: safwah.font.bold, fontSize: 19, color: safwah.colors.text },
   close: { position: 'absolute', right: 20, top: 14, width: 34, height: 34, borderRadius: 17, backgroundColor: safwah.colors.card, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: safwah.colors.border },
 
-  cameraWrap: { width: '100%', aspectRatio: 1, borderRadius: 26, overflow: 'hidden', backgroundColor: '#060606', borderWidth: 1, borderColor: safwah.colors.border, alignItems: 'center', justifyContent: 'center', marginTop: 4 },
+  cameraWrap: { width: '100%', aspectRatio: 1, borderRadius: 26, overflow: 'hidden', backgroundColor: '#eeeef0', borderWidth: 1, borderColor: safwah.colors.border, alignItems: 'center', justifyContent: 'center', marginTop: 4 },
   fallback: { ...StyleSheet.absoluteFillObject, alignItems: 'center', justifyContent: 'center' },
   corner: { position: 'absolute', width: 32, height: 32, borderColor: safwah.colors.lime },
   tl: { top: 16, left: 16, borderTopWidth: 3, borderLeftWidth: 3, borderTopLeftRadius: 12 },

@@ -164,9 +164,9 @@ export default function ProfileScreen() {
             <Switch
               value={notifications}
               onValueChange={setNotifications}
-              trackColor={{ true: safwah.colors.lime, false: 'rgba(255,255,255,0.12)' }}
+              trackColor={{ true: safwah.colors.lime, false: 'rgba(19,19,22,0.12)' }}
               thumbColor={safwah.colors.text}
-              ios_backgroundColor="rgba(255,255,255,0.12)"
+              ios_backgroundColor="rgba(19,19,22,0.12)"
             />
           </View>
 
@@ -253,7 +253,7 @@ const styles = StyleSheet.create({
   walletActions: { flexDirection: 'row', gap: 10, marginTop: 18 },
   manageBtn: { flex: 1, alignItems: 'center', justifyContent: 'center', height: 44, borderRadius: safwah.radius.md, backgroundColor: safwah.colors.cardSoft, borderWidth: 1, borderColor: safwah.colors.borderStrong },
   manageText: { fontFamily: safwah.font.semibold, fontSize: 14, color: safwah.colors.text },
-  disconnectBtn: { flex: 1, alignItems: 'center', justifyContent: 'center', height: 44, borderRadius: safwah.radius.md, borderWidth: 1, borderColor: 'rgba(255,107,107,0.3)' },
+  disconnectBtn: { flex: 1, alignItems: 'center', justifyContent: 'center', height: 44, borderRadius: safwah.radius.md, borderWidth: 1, borderColor: 'rgba(229,72,77,0.3)' },
   disconnectText: { fontFamily: safwah.font.semibold, fontSize: 14, color: safwah.colors.danger },
 
   level: { paddingVertical: 18 },
@@ -262,7 +262,7 @@ const styles = StyleSheet.create({
   levelSfl: { fontFamily: safwah.font.monoBold, fontSize: 20, color: safwah.colors.emerald, marginTop: 4 },
   levelRing: { width: 48, height: 48, borderRadius: 24, borderWidth: 3, borderColor: safwah.colors.emerald, alignItems: 'center', justifyContent: 'center' },
   levelPct: { fontFamily: safwah.font.monoBold, fontSize: 13, color: safwah.colors.text },
-  levelTrack: { height: 7, borderRadius: 4, backgroundColor: '#000', borderWidth: 1, borderColor: safwah.colors.border, overflow: 'hidden' },
+  levelTrack: { height: 7, borderRadius: 4, backgroundColor: '#eeeef0', borderWidth: 1, borderColor: safwah.colors.border, overflow: 'hidden' },
   levelFill: { height: '100%', backgroundColor: safwah.colors.emerald },
   levelHint: { fontFamily: safwah.font.regular, fontSize: 12, color: safwah.colors.textMute, marginTop: 9 },
 

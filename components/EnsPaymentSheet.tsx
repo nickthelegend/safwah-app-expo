@@ -28,7 +28,7 @@ function Row({ label, value, isGreen }: { label: string; value: string; isGreen?
   return (
     <View style={styles.row}>
       <Text style={styles.rowLabel}>{label}</Text>
-      <Text style={[styles.rowValue, isGreen && { color: '#00FF94' }]}>{value}</Text>
+      <Text style={[styles.rowValue, isGreen && { color: '#131316' }]}>{value}</Text>
     </View>
   );
 }
@@ -88,7 +88,7 @@ export function EnsPaymentSheet({
             <Text style={styles.sheetDomain}>{fullDomain}</Text>
           </View>
           <TouchableOpacity onPress={onClose} style={styles.closeIcon}>
-            <Ionicons name="close" size={24} color="rgba(255,255,255,0.3)" />
+            <Ionicons name="close" size={24} color="rgba(19,19,22,0.6)" />
           </TouchableOpacity>
         </View>
 
@@ -127,7 +127,7 @@ const flex1 = { flex: 1 };
 const styles = StyleSheet.create({
   backdrop: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(0,0,0,0.7)',
+    backgroundColor: 'rgba(19,19,22,0.35)',
   },
   sheet: {
     position: 'absolute',
@@ -135,11 +135,11 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     height: SCREEN_HEIGHT * 0.75,
-    backgroundColor: '#0D0D0D',
+    backgroundColor: '#ffffff',
     borderTopLeftRadius: 32,
     borderTopRightRadius: 32,
     padding: 24,
-    shadowColor: '#000',
+    shadowColor: 'rgba(19,19,22,0.12)',
     shadowOffset: { width: 0, height: -10 },
     shadowOpacity: 0.5,
     shadowRadius: 20,
@@ -148,33 +148,33 @@ const styles = StyleSheet.create({
   handle: {
     width: 40,
     height: 4,
-    backgroundColor: 'rgba(255,255,255,0.1)',
+    backgroundColor: 'rgba(19,19,22,0.1)',
     borderRadius: 2,
     alignSelf: 'center',
     marginBottom: 24,
   },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 20 },
   closeIcon: { padding: 4 },
-  sheetTitle: { fontFamily: 'Manrope-Bold', fontSize: 18, color: '#FFFFFF', marginBottom: 4 },
-  sheetDomain: { fontFamily: 'Manrope-ExtraBold', fontSize: 24, color: '#00FF94' },
+  sheetTitle: { fontFamily: 'Manrope-Bold', fontSize: 18, color: '#131316', marginBottom: 4 },
+  sheetDomain: { fontFamily: 'Manrope-ExtraBold', fontSize: 24, color: '#131316' },
   priceCard: {
-    backgroundColor: 'rgba(255,255,255,0.03)', borderRadius: 16,
-    borderWidth: 1, borderColor: 'rgba(255,255,255,0.05)',
+    backgroundColor: 'rgba(19,19,22,0.04)', borderRadius: 16,
+    borderWidth: 1, borderColor: 'rgba(19,19,22,0.05)',
     padding: 16, marginBottom: 24, gap: 12
   },
   row: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
-  rowLabel: { fontFamily: 'Inter-Regular', fontSize: 13, color: 'rgba(255,255,255,0.4)' },
-  rowValue: { fontFamily: 'Inter-Bold', fontSize: 14, color: '#FFFFFF' },
+  rowLabel: { fontFamily: 'Inter-Regular', fontSize: 13, color: 'rgba(19,19,22,0.6)' },
+  rowValue: { fontFamily: 'Inter-Bold', fontSize: 14, color: '#131316' },
   infoBlock: { marginBottom: 32 },
-  infoText: { fontFamily: 'Inter-Regular', fontSize: 13, color: 'rgba(255,255,255,0.4)', lineHeight: 20 },
-  addressText: { fontFamily: 'Inter-Medium', fontSize: 14, color: '#00FF94', marginTop: 8 },
+  infoText: { fontFamily: 'Inter-Regular', fontSize: 13, color: 'rgba(19,19,22,0.6)', lineHeight: 20 },
+  addressText: { fontFamily: 'Inter-Medium', fontSize: 14, color: '#131316', marginTop: 8 },
   confirmBtn: {
-    backgroundColor: '#00FF94', borderRadius: 28,
+    backgroundColor: '#131316', borderRadius: 28,
     height: 56, justifyContent: 'center', alignItems: 'center', marginBottom: 12
   },
-  confirmBtnText: { fontFamily: 'Manrope-ExtraBold', fontSize: 16, color: '#000000' },
+  confirmBtnText: { fontFamily: 'Manrope-ExtraBold', fontSize: 16, color: '#ffffff' },
   skipBtn: { alignItems: 'center', paddingVertical: 12 },
-  skipBtnText: { fontFamily: 'Inter-Regular', fontSize: 14, color: 'rgba(255,255,255,0.3)' },
+  skipBtnText: { fontFamily: 'Inter-Regular', fontSize: 14, color: 'rgba(19,19,22,0.6)' },
 });
 
 

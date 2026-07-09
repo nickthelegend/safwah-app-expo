@@ -6,7 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/logo/logo.png",
     "scheme": "molfi",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.molfi.app"

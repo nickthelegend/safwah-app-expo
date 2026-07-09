@@ -86,7 +86,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
               layout={Layout.springify()}
               style={[
                 styles.toast,
-                { backgroundColor: '#1d1d1d' },
+                { backgroundColor: '#ffffff' },
                 t.variant === 'error' && styles.errorToast,
                 t.variant === 'success' && styles.successToast,
               ]}
@@ -103,7 +103,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
                 )}
               </View>
               <View style={styles.textContainer}>
-                <Text style={[styles.title, { color: '#fff' }]}>{t.title}</Text>
+                <Text style={[styles.title, { color: '#131316' }]}>{t.title}</Text>
                 {t.description && (
                   <Text style={styles.description}>{t.description}</Text>
                 )}
@@ -112,7 +112,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
                 onPress={() => setToasts(prev => prev.filter(toast => toast.id !== t.id))}
                 style={styles.closeButton}
               >
-                <Ionicons name="close" size={20} color="#6C6C6C" />
+                <Ionicons name="close" size={20} color="#9a9aa2" />
               </TouchableOpacity>
             </Animated.View>
           ))}
@@ -141,8 +141,8 @@ const styles = StyleSheet.create({
     padding: 16,
     borderRadius: 16,
     borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.1)',
-    shadowColor: '#000',
+    borderColor: 'rgba(19, 19, 22, 0.1)',
+    shadowColor: 'rgba(19, 19, 22, 0.12)',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 8,
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
   description: {
     fontFamily: 'Inter-Regular',
     fontSize: 13,
-    color: '#A0A0A0',
+    color: '#63636b',
     marginTop: 2,
   },
   closeButton: {

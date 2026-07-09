@@ -19,6 +19,7 @@ import { JetBrainsMono_400Regular, JetBrainsMono_700Bold } from '@expo-google-fo
 
 import { safwah } from '../theme/safwah';
 import { Web3Provider } from '../provider/Web3Provider';
+import { TxProvider } from '../provider/TxProvider';
 import { SessionProvider, useSession } from '../provider/SessionProvider';
 import { HoldingsProvider } from '../provider/HoldingsProvider';
 import { ToastProvider } from '../components/safwah/Toast';
@@ -68,16 +69,18 @@ export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1, backgroundColor: safwah.colors.bg }}>
       <Web3Provider>
-        <SessionProvider>
-          <HoldingsProvider>
-            <SafeAreaProvider>
-              <ToastProvider>
-                <Gate />
-                <StatusBar style="light" />
-              </ToastProvider>
-            </SafeAreaProvider>
-          </HoldingsProvider>
-        </SessionProvider>
+        <TxProvider>
+          <SessionProvider>
+            <HoldingsProvider>
+              <SafeAreaProvider>
+                <ToastProvider>
+                  <Gate />
+                  <StatusBar style="dark" />
+                </ToastProvider>
+              </SafeAreaProvider>
+            </HoldingsProvider>
+          </SessionProvider>
+        </TxProvider>
       </Web3Provider>
     </GestureHandlerRootView>
   );

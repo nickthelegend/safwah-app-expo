@@ -64,7 +64,7 @@ export const useToast = () => useContext(ToastContext);
 
 const styles = StyleSheet.create({
   wrap: { position: 'absolute', left: 14, right: 14, zIndex: 9999 },
-  toast: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: safwah.colors.bgElevated, borderWidth: 1, borderColor: safwah.colors.borderStrong, borderRadius: safwah.radius.md, paddingVertical: 12, paddingHorizontal: 14, shadowColor: '#000', shadowOffset: { width: 0, height: 8 }, shadowOpacity: 0.4, shadowRadius: 16, elevation: 12 },
+  toast: { flexDirection: 'row', alignItems: 'center', gap: 12, backgroundColor: safwah.colors.bgElevated, borderWidth: 1, borderColor: safwah.colors.borderStrong, borderRadius: safwah.radius.md, paddingVertical: 12, paddingHorizontal: 14, shadowColor: 'rgba(19,19,22,0.12)', shadowOffset: { width: 0, height: 8 }, shadowOpacity: 0.4, shadowRadius: 16, elevation: 12 },
   iconWrap: { width: 38, height: 38, borderRadius: 11, alignItems: 'center', justifyContent: 'center' },
   title: { fontFamily: safwah.font.semibold, fontSize: 14, color: safwah.colors.text },
   desc: { fontFamily: safwah.font.regular, fontSize: 12, color: safwah.colors.textDim, marginTop: 2 },

@@ -1,24 +1,24 @@
-// Safwah design system — XORR-matched but premium-minimal: near-solid surfaces, one
-// whisper-soft glow, lime (#CCFF00) used as a sharp accent rather than washes.
+// Safwah design system — premium white/black (Mobbin register): light-gray canvas,
+// white cards, ink as the primary accent, green reserved for success only.
 export const safwah = {
   colors: {
-    bg: '#000000',
-    bgElevated: '#08080a',
-    card: '#0d0d0f',
-    cardSoft: '#101013',
-    lime: '#CCFF00',
-    limeDim: '#bfe800',
-    emerald: '#10b981',
-    text: '#f3f3f4',
-    textDim: '#9a9aa0',
-    textMute: '#5d5d63',
-    border: 'rgba(255,255,255,0.07)',
-    borderStrong: 'rgba(255,255,255,0.12)',
-    hairline: 'rgba(255,255,255,0.05)',
-    limeWash: 'rgba(204,255,0,0.09)',
-    emeraldWash: 'rgba(16,185,129,0.10)',
-    danger: '#ff6b6b',
-    onLime: '#0a0a0a',
+    bg: '#f6f6f7',
+    bgElevated: '#ffffff',
+    card: '#ffffff',
+    cardSoft: '#eeeef0',
+    lime: '#131316',          // primary accent → ink (dark pills / active)
+    limeDim: '#33333a',
+    emerald: '#17a34a',       // success / positive only
+    text: '#131316',
+    textDim: '#63636b',
+    textMute: '#9a9aa2',
+    border: 'rgba(19,19,22,0.08)',
+    borderStrong: 'rgba(19,19,22,0.14)',
+    hairline: 'rgba(19,19,22,0.06)',
+    limeWash: 'rgba(19,19,22,0.05)',
+    emeraldWash: 'rgba(23,163,74,0.10)',
+    danger: '#e5484d',
+    onLime: '#ffffff',        // text/icon on ink pills
   },
   font: {
     display: 'SpaceGrotesk_700Bold',

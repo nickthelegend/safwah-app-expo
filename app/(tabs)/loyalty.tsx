@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
   amountRow: { flexDirection: 'row', alignItems: 'flex-end', gap: 8, marginTop: 14 },
   amount: { fontFamily: safwah.font.monoBold, fontSize: 40, color: safwah.colors.text, letterSpacing: -1 },
   sfl: { fontFamily: safwah.font.semibold, fontSize: 15, color: safwah.colors.emerald, marginBottom: 8 },
-  tierTrack: { height: 7, borderRadius: 4, backgroundColor: '#000', borderWidth: 1, borderColor: safwah.colors.border, overflow: 'hidden', marginTop: 18 },
+  tierTrack: { height: 7, borderRadius: 4, backgroundColor: '#eeeef0', borderWidth: 1, borderColor: safwah.colors.border, overflow: 'hidden', marginTop: 18 },
   tierFill: { height: '100%', backgroundColor: safwah.colors.emerald },
   tierMeta: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 8 },
   tierHint: { fontFamily: safwah.font.regular, fontSize: 11.5, color: safwah.colors.textMute },

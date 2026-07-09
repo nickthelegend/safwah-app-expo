@@ -62,7 +62,7 @@ export function AlertDialog({
     >
       <Pressable style={styles.overlay} onPress={onClose}>
         <BlurView intensity={20} tint="dark" style={StyleSheet.absoluteFill} />
-        <Pressable style={[styles.content, { backgroundColor: '#1d1d1d' }]}>
+        <Pressable style={[styles.content, { backgroundColor: '#ffffff' }]}>
           <Text style={[styles.title, { color: theme.text }]}>{title}</Text>
           <Text style={styles.description}>{description}</Text>
           
@@ -90,7 +90,7 @@ export function AlertDialog({
 const styles = StyleSheet.create({
   overlay: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    backgroundColor: 'rgba(19, 19, 22, 0.35)',
     justifyContent: 'center',
     alignItems: 'center',
     padding: 24,
@@ -101,8 +101,8 @@ const styles = StyleSheet.create({
     borderRadius: 24,
     padding: 24,
     borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.1)',
-    shadowColor: '#000',
+    borderColor: 'rgba(19, 19, 22, 0.1)',
+    shadowColor: 'rgba(19, 19, 22, 0.12)',
     shadowOffset: { width: 0, height: 10 },
     shadowOpacity: 0.5,
     shadowRadius: 20,
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
   description: {
     fontFamily: 'Inter-Regular',
     fontSize: 15,
-    color: '#A0A0A0',
+    color: '#63636b',
     lineHeight: 22,
     marginBottom: 32,
   },
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
   cancelText: {
     fontFamily: 'Manrope-SemiBold',
     fontSize: 15,
-    color: '#6C6C6C',
+    color: '#9a9aa2',
   },
   confirmButton: {
     minWidth: 120,

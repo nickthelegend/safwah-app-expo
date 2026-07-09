@@ -107,9 +107,9 @@ export default function GiftScreen() {
 }
 
 const styles = StyleSheet.create({
-  root: { flex: 1, backgroundColor: '#08080a' },
+  root: { flex: 1, backgroundColor: '#ffffff' },
   header: { alignItems: 'center', marginBottom: 18, paddingHorizontal: 20 },
-  grab: { width: 40, height: 4, borderRadius: 2, backgroundColor: 'rgba(255,255,255,0.18)', marginBottom: 14 },
+  grab: { width: 40, height: 4, borderRadius: 2, backgroundColor: 'rgba(19,19,22,0.18)', marginBottom: 14 },
   title: { fontFamily: safwah.font.bold, fontSize: 19, color: safwah.colors.text },
   close: { position: 'absolute', right: 20, top: 14, width: 34, height: 34, borderRadius: 17, backgroundColor: safwah.colors.card, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: safwah.colors.border },
   field: { flexDirection: 'row', alignItems: 'center', gap: 10, height: 54, paddingHorizontal: 16, borderRadius: safwah.radius.md, backgroundColor: safwah.colors.card, borderWidth: 1, borderColor: safwah.colors.border, marginBottom: 12 },

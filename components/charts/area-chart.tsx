@@ -42,40 +42,40 @@ export function AreaChart({ data, config }: AreaChartProps) {
         
         // Grid & Rules (Low Intensity)
         hideRules={!config?.showGrid}
-        rulesColor="rgba(255,255,255,0.05)"
+        rulesColor="rgba(19,19,22,0.05)"
         rulesType="solid"
-        
+
         // Axes
         yAxisColor="transparent"
-        xAxisColor="rgba(255,255,255,0.05)"
+        xAxisColor="rgba(19,19,22,0.05)"
         hideYAxisText={!config?.showYLabels}
-        yAxisTextStyle={{ color: 'rgba(255,255,255,0.3)', fontSize: 10, fontFamily: 'Inter-Medium' }}
-        xAxisLabelTextStyle={{ color: 'rgba(255,255,255,0.3)', fontSize: 10, fontFamily: 'Inter-Medium' }}
+        yAxisTextStyle={{ color: 'rgba(19,19,22,0.6)', fontSize: 10, fontFamily: 'Inter-Medium' }}
+        xAxisLabelTextStyle={{ color: 'rgba(19,19,22,0.6)', fontSize: 10, fontFamily: 'Inter-Medium' }}
         
         // Interactivity
         pointerConfig={{
           pointerStripHeight: 160,
-          pointerStripColor: 'rgba(255,255,255,0.1)',
+          pointerStripColor: 'rgba(19,19,22,0.1)',
           pointerStripWidth: 2,
           pointerColor: theme.primary,
           radius: 6,
           pointerLabelComponent: (items: any) => {
             return (
               <View style={{
-                backgroundColor: '#1A1A1A',
+                backgroundColor: '#ffffff',
                 padding: 12,
                 borderRadius: 12,
                 borderWidth: 1,
-                borderColor: 'rgba(255,255,255,0.1)',
-                shadowColor: '#000',
+                borderColor: 'rgba(19,19,22,0.1)',
+                shadowColor: 'rgba(19,19,22,0.12)',
                 shadowOffset: { width: 0, height: 4 },
                 shadowOpacity: 0.3,
                 shadowRadius: 8,
               }}>
-                <Text style={{ color: 'rgba(255,255,255,0.5)', fontSize: 10, fontFamily: 'Inter-Regular', marginBottom: 4 }}>
+                <Text style={{ color: 'rgba(19,19,22,0.6)', fontSize: 10, fontFamily: 'Inter-Regular', marginBottom: 4 }}>
                   {items[0].label}
                 </Text>
-                <Text style={{ color: '#FFF', fontSize: 16, fontFamily: 'Inter-Medium', fontWeight: 'bold' }}>
+                <Text style={{ color: '#131316', fontSize: 16, fontFamily: 'Inter-Medium', fontWeight: 'bold' }}>
                   ${items[0].value.toLocaleString()}
                 </Text>
               </View>

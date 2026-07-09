@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useAccount } from 'wagmi';
+import { useAppKit } from '@reown/appkit-react-native';
 
 import { ScreenBackground } from '../../components/safwah/ScreenBackground';
 import { GlassCard } from '../../components/safwah/GlassCard';
@@ -11,6 +12,7 @@ import { safwah } from '../../theme/safwah';
 import { getTransactions, type Transaction } from '../../lib/api';
 import { CCY_SYMBOL, fmt, fromAED, shortAddr, type Currency } from '../../lib/format';
 import { useHoldings } from '../../provider/HoldingsProvider';
+import { useConsumerOnchain } from '../../hooks/useConsumerOnchain';
 import { weeklySpend } from '../../lib/analytics';
 import { ChartContainer } from '../../components/charts/ChartContainer';
 import { LineChart } from '../../components/charts/LineChart';
@@ -29,14 +31,17 @@ export default function HomeScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { address, isConnected } = useAccount();
+  const { open } = useAppKit();
+  const oc = useConsumerOnchain();
   const { totalAED, currency: ccy, setCurrency, rates, balances } = useHoldings();
+  const effTotal = oc.isConnected ? oc.totalAED : totalAED;
   const [txs, setTxs] = useState<Transaction[]>([]);
 
   useEffect(() => {
     getTransactions().then(setTxs);
   }, []);
 
-  const bal = fromAED(totalAED, ccy, rates);
+  const bal = fromAED(effTotal, ccy, rates);
   const balText = ccy === 'USD' ? `$${fmt(bal)}` : `${fmt(bal)}`;
   const week = weeklySpend(txs);
 
@@ -51,10 +56,10 @@ export default function HomeScreen() {
             <View style={styles.brandDot} />
             <Text style={styles.brand}>safwah</Text>
           </View>
-          <View style={styles.walletPill}>
+          <TouchableOpacity style={styles.walletPill} activeOpacity={0.8} onPress={() => open()}>
             <View style={[styles.dot, { backgroundColor: isConnected ? safwah.colors.emerald : safwah.colors.textMute }]} />
-            <Text style={styles.walletText}>{isConnected ? shortAddr(address) : 'Not connected'}</Text>
-          </View>
+            <Text style={styles.walletText}>{isConnected ? shortAddr(address) : 'Connect'}</Text>
+          </TouchableOpacity>
         </View>
 
         <Text style={styles.greeting}>Welcome back, Aisha</Text>
@@ -77,7 +82,7 @@ export default function HomeScreen() {
             <Ionicons name="chevron-forward" size={20} color={safwah.colors.textMute} style={{ marginBottom: 9 }} />
           </TouchableOpacity>
           <Text style={styles.amountSub}>
-            {ccy !== 'AED' ? `≈ AED ${fmt(totalAED)}` : `≈ $${fmt(fromAED(totalAED, 'USD', rates))} · ${fmt(fromAED(totalAED, 'USDT', rates))} USDT`}
+            {ccy !== 'AED' ? `≈ AED ${fmt(effTotal)}` : `≈ $${fmt(fromAED(effTotal, 'USD', rates))} · ${fmt(fromAED(effTotal, 'USDT', rates))} USDT`}
           </Text>
 
           <View style={styles.heroActions}>
@@ -140,7 +145,7 @@ const styles = StyleSheet.create({
   hero: { marginTop: 12, paddingVertical: 20 },
   heroTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   heroLabel: { fontFamily: safwah.font.medium, fontSize: 13, color: safwah.colors.textDim },
-  segment: { flexDirection: 'row', backgroundColor: '#000', borderRadius: safwah.radius.pill, padding: 3, borderWidth: 1, borderColor: safwah.colors.border },
+  segment: { flexDirection: 'row', backgroundColor: '#eeeef0', borderRadius: safwah.radius.pill, padding: 3, borderWidth: 1, borderColor: safwah.colors.border },
   segBtn: { paddingVertical: 4, paddingHorizontal: 11, borderRadius: safwah.radius.pill },
   segBtnActive: { backgroundColor: safwah.colors.lime },
   segText: { fontFamily: safwah.font.semibold, fontSize: 11, color: safwah.colors.textMute },

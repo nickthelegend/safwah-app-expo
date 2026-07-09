@@ -47,43 +47,43 @@ export function ModernLineChart({ data, height = 240, color, hideYAxis = false }
         noOfSections={4}
         yAxisColor="transparent"
         xAxisColor="transparent"
-        rulesColor="rgba(255,255,255,0.03)"
+        rulesColor="rgba(19,19,22,0.05)"
         rulesType="solid"
         hideYAxisText={hideYAxis}
-        yAxisTextStyle={{ color: 'rgba(255,255,255,0.2)', fontSize: 10, fontFamily: 'Inter-Medium' }}
-        xAxisLabelTextStyle={{ color: 'rgba(255,255,255,0.2)', fontSize: 10, fontFamily: 'Inter-Medium' }}
+        yAxisTextStyle={{ color: 'rgba(19,19,22,0.6)', fontSize: 10, fontFamily: 'Inter-Medium' }}
+        xAxisLabelTextStyle={{ color: 'rgba(19,19,22,0.6)', fontSize: 10, fontFamily: 'Inter-Medium' }}
         hideDataPoints={false}
         dataPointsColor={primaryColor}
         dataPointsRadius={4}
-        focusedDataPointColor="#fff"
+        focusedDataPointColor="#131316"
         focusedDataPointRadius={6}
         showVerticalLines={false}
         pointerConfig={{
           pointerStripHeight: height,
-          pointerStripColor: 'rgba(255,255,255,0.1)',
+          pointerStripColor: 'rgba(19,19,22,0.1)',
           pointerStripWidth: 2,
           pointerColor: primaryColor,
           radius: 6,
           pointerLabelComponent: (items: any) => {
             return (
               <View style={{
-                backgroundColor: '#121212',
+                backgroundColor: '#ffffff',
                 padding: 12,
                 borderRadius: 16,
                 borderWidth: 1,
-                borderColor: 'rgba(255,255,255,0.1)',
+                borderColor: 'rgba(19,19,22,0.1)',
                 minWidth: 110,
-                shadowColor: '#000',
+                shadowColor: 'rgba(19,19,22,0.12)',
                 shadowOffset: { width: 0, height: 8 },
                 shadowOpacity: 0.5,
                 shadowRadius: 12,
                 elevation: 10,
                 marginLeft: -55, // Center the tooltip
               }}>
-                <Text style={{ color: 'rgba(255,255,255,0.4)', fontSize: 10, fontFamily: 'Inter-Medium', marginBottom: 2 }}>
+                <Text style={{ color: 'rgba(19,19,22,0.6)', fontSize: 10, fontFamily: 'Inter-Medium', marginBottom: 2 }}>
                   {items[0].label || 'Value'}
                 </Text>
-                <Text style={{ color: '#FFF', fontSize: 16, fontFamily: 'Manrope-ExtraBold' }}>
+                <Text style={{ color: '#131316', fontSize: 16, fontFamily: 'Manrope-ExtraBold' }}>
                   {items[0].value.toLocaleString()}
                 </Text>
               </View>
