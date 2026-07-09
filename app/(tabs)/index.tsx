@@ -9,7 +9,7 @@ import { useAppKit } from '@reown/appkit-react-native';
 import { ScreenBackground } from '../../components/safwah/ScreenBackground';
 import { GlassCard } from '../../components/safwah/GlassCard';
 import { safwah } from '../../theme/safwah';
-import { getTransactions, type Transaction } from '../../lib/api';
+import { getTransactions, getStats, DEFAULT_STATS, type Transaction, type Stats } from '../../lib/api';
 import { CCY_SYMBOL, fmt, fromAED, shortAddr, type Currency } from '../../lib/format';
 import { useHoldings } from '../../provider/HoldingsProvider';
 import { useConsumerOnchain } from '../../hooks/useConsumerOnchain';
@@ -36,10 +36,15 @@ export default function HomeScreen() {
   const { totalAED, currency: ccy, setCurrency, rates, balances } = useHoldings();
   const effTotal = oc.isConnected ? oc.totalAED : totalAED;
   const [txs, setTxs] = useState<Transaction[]>([]);
+  const [stats, setStats] = useState<Stats>(DEFAULT_STATS);
 
   useEffect(() => {
     getTransactions().then(setTxs);
+    getStats().then(setStats);
   }, []);
+
+  // Live VAT reclaimable from the API; falls back to the demo figure when offline.
+  const vatText = stats.txCount > 0 ? fmt(stats.totalVatAED) : '241.00';
 
   const bal = fromAED(effTotal, ccy, rates);
   const balText = ccy === 'USD' ? `$${fmt(bal)}` : `${fmt(bal)}`;
@@ -103,7 +108,7 @@ export default function HomeScreen() {
               <Ionicons name="receipt-outline" size={17} color={safwah.colors.lime} />
               <Text style={styles.statLabel}>VAT claimable</Text>
             </View>
-            <Text style={styles.statValue}>AED 241.00</Text>
+            <Text style={styles.statValue}>AED {vatText}</Text>
           </GlassCard>
           <GlassCard style={styles.stat}>
             <View style={styles.statTop}>
