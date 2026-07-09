@@ -7,7 +7,7 @@ export type Token = 'AED' | 'USDT' | 'SFL';
 export type Balances = Record<Token, number>;
 
 export const TOKEN_META: Record<Token, { name: string; color: string }> = {
-  AED: { name: 'Dirham (Mock AED)', color: '#131316' },
+  AED: { name: 'Dirham (Mock AED)', color: '#15300C' },
   USDT: { name: 'Tether USD', color: '#26a17b' },
   SFL: { name: 'Safwah Loyalty', color: '#10b981' },
 };
